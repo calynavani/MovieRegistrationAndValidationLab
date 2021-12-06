@@ -1,0 +1,49 @@
+﻿@model Movie
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 style="color: orange;">Register New Movie</h1>
+
+@using (Html.BeginForm("Index", "Movie", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.ID)
+        @Html.TextBoxFor(m => m.ID)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title)
+       @*<div> @Html.ValidationMessageFor(m => m.Title) </div>*@
+    </div>
+
+
+
+
+    <div>
+        @Html.LabelFor(m => m.Year)
+        @Html.TextBoxFor(m => m.Year)
+        @*<div> @Html.ValidationMessageFor(m => m.Year) </div>*@
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Actors)
+        @Html.TextBoxFor(m => m.Actors)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Directors)
+        @Html.TextBoxFor(m => m.Directors)
+    </div>
+    <div>
+
+        @Html.LabelFor(m => m.Genre)
+        @Html.DropDownListFor(m => m.Genre, new SelectList(Enum.GetValues(typeof(Genre))))
+    </div>
+
+    <input style="background-color: orange; color: white; border-style: none;  border-radius: 70%" type="submit" value="Submit" />
+}
+
+

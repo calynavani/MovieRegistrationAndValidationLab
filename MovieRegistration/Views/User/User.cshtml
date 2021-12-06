@@ -1,0 +1,41 @@
+﻿@model User
+@{
+    ViewData["Title"] = "User";
+}
+
+
+
+<h1 style="color: orange;">Create Account</h1>
+
+@using (Html.BeginForm("Index", "User", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Age)
+        @Html.TextBoxFor(m => m.Age)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.State)
+        @Html.DropDownListFor(m => m.State, new SelectList(Enum.GetValues(typeof(State))))
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.FavColor)
+        <input type="color" value="Favorite Color" placeholder="Favorite Color" />
+
+    </div>
+
+ 
+    
+    <br>
+
+    <input style="background-color: orange; color: white; border-style: none;  border-radius: 70%" type="submit" value="Submit"/>
+}
+
+
+

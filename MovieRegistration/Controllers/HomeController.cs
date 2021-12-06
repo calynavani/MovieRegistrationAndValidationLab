@@ -20,23 +20,17 @@ namespace MovieRegistration.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Movie model = new Movie();
+            return View(model);
         }
+        
 
         public IActionResult Privacy()
         {
             return View();
         }
 
-        public IActionResult Registration()
-        {
-            return View();
-        }
-        public IActionResult Result(Movie m)
-        {
-            return View(m);
-        }
-
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
